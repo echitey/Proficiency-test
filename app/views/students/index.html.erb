@@ -1,13 +1,52 @@
-<h1>Os Estudantes</h1>
-<%if @students.empty? %>
-  Nenhum Estudante cadastrado!
-<% else %>
-  <% @students.each do |student|%>
-  <h2>Student id: <%= student.id%>
-    <h2>Nome: <%= student.name%></h2
-    <h3>Status: <%= student.status%></h3>
-    <%= link_to "Ver Estudante", student_path(student)%>
-  <% end %>
-<% end %>
-
-<%= link_to "Novo Estudante", new_student_path%>
+<div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h3>Lista dos Estudantes</h3>
+          <br/>
+          <% if @students.empty? %>
+            <h3>Nenhum Estudante cadastrado! </h3>
+          <% else %>
+          	<table class="table table-striped">
+	          	<tr>
+      					<th>Id</th>
+      					<th>Nome</th>
+      					<th>Matriculado?</th>
+                <th></th>
+                <th></th>
+                <th></th>
+      				</tr>
+	            <% @students.each do |student| %>
+  	            <tr>
+        					<td><%= student.id %></td>
+        					<td><%= link_to student.name, student %></td>
+        					<td>
+        						<% if student.status == 1 %>
+        							<%= 'Sim' %>
+        						<% else %>
+        							<%= 'Não' %>
+        						<% end %>
+        					</td>
+                  <td>
+                    <%= link_to student do%>
+                      <i class="fa fa-search"></i>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%= link_to edit_student_path(student) do%>
+                      <i class="fa fa-pencil"></i>
+                    <%end%>
+                  </td>
+                  <td>
+                    <%= link_to student , method: :delete, data: {confirm: "Are you sure?"} do%>
+                      <i class="fa fa-times"></i>
+                    <%end%>
+                  </td>
+        				</tr>
+	            <% end %>
+            </table>
+            <br>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div> <!-- /container -->

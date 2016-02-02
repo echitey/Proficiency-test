@@ -1,9 +1,26 @@
-<h2>Estudante Id: <%= @student.id%>
-<h2>Nome: <%= @student.name%></h2>
-<h3>Numero de Registro: <%= @student.register_number%></h3>
-<h3>Status: <%= @student.status%></h3>
-<h3>Criado em: <%= @student.created_at%></h3>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h4 class="text-center">INFORMAÇÕES DO ESTUDANTE</h4><br/>
+    <strong>Estudante Id: </strong><%= @student.id%><br/>
+    <strong>Nome: </strong><%= @student.name%><br/>
+    <strong>Numero de Registro: </strong><%= @student.register_number%><br/>
+    <strong>Status: </strong>
+      <% if @student.status == 1 %>
+        <%= 'Matriculado' %>
+      <% else %>
+        <%= 'Não Matriculado' %>
+      <% end %><br/>
+    <strong>Criado em: </strong><%= @student.created_at%>
 
-<%= link_to 'Estudantes', students_path%>
-<%= link_to 'Alterar', edit_student_path(@student)%>
-<%= link_to 'Excluir', student_path , method: :delete, data:{confirm: "Are you sure?"}%>
+    <br/><br/><br/>
+
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+         <%= link_to 'Alterar', edit_student_path(@student), class: "btn btn-default btn-block" %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'Excluir', student_path, class: "btn btn-danger btn-block",
+                                  method: :delete, data: {confirm: "Are you sure?"} %>
+      </div>
+  </div>
+</div>
