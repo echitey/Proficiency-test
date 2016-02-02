@@ -1,0 +1,22 @@
+<%= form_for @course do |f|%>
+
+  <% if @course.errors.any? %>
+      <h2><%= pluralize(@course.errors.count, " erro") %> encontrado(s): </h2>
+      <ul>
+        <% @course.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <%= f.label :name%>
+  <%= f.text_field :name%></br>
+
+  <%= f.label :descriptionr%>
+  <%= f.text_field :description%></br>
+
+  <%= f.label :status%>
+  <%= f.text_field :status%></br>
+
+  <%= f.submit%>
+<% end %>

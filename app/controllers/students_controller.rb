@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:edit,:show,:update,:destroy]
 
   def index
-    @studens = Student.all
+    @students = Student.all
   end
 
   def new

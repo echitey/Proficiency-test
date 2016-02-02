@@ -1,0 +1,13 @@
+<h1>Os Cursos</h1>
+<%if @courses.empty? %>
+  Nenhum Curso cadastrado!
+<% else %>
+  <% @courses.each do |course|%>
+  <h2>Curso: id <%= course.id%>
+    <h2>Nome: <%= course.name%></h2
+    <h3>Status: <%= contact.status%></h3>
+    <%= link_to "Ver Curso", course_path(course)%>
+  <% end %>
+<% end %>
+
+<%= link_to "Novo Curso", new_course_path%>

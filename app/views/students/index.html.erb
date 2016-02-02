@@ -1,0 +1,13 @@
+<h1>Os Estudantes</h1>
+<%if @students.empty? %>
+  Nenhum Estudante cadastrado!
+<% else %>
+  <% @students.each do |student|%>
+  <h2>Student id: <%= student.id%>
+    <h2>Nome: <%= student.name%></h2
+    <h3>Status: <%= student.status%></h3>
+    <%= link_to "Ver Estudante", student_path(student)%>
+  <% end %>
+<% end %>
+
+<%= link_to "Novo Estudante", new_student_path%>

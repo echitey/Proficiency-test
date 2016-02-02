@@ -1,0 +1,9 @@
+<h2>Estudante Id: <%= @student.id%>
+<h2>Nome: <%= @student.name%></h2>
+<h3>Numero de Registro: <%= @student.register_number%></h3>
+<h3>Status: <%= @student.status%></h3>
+<h3>Criado em: <%= @student.created_at%></h3>
+
+<%= link_to 'Estudantes', students_path%>
+<%= link_to 'Alterar', edit_student_path(@student)%>
+<%= link_to 'Excluir', student_path , method: :delete, data:{confirm: "Are you sure?"}%>
