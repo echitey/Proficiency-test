@@ -1,0 +1,10 @@
+<br/><br/>
+<div class="well">
+  <div class="form-inline">
+    <%= simple_form_for([@student, @student.matriculas.build]) do |f|%>
+      <%= f.label :course_id, 'Curso: ' %>
+      <%= f.collection_select :course_id, Course.where(status: 1).order("name ASC"), :id, :name, {prompt: false}, {class: "form-control"} %>
+      <%= f.submit 'Realizar Matricula', class: 'btn btn-default'%>
+    <% end %>
+  </div>
+</div>

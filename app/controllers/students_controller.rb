@@ -13,6 +13,10 @@ class StudentsController < ApplicationController
   end
 
   def show
+    @matricula = Matricula.where(student_id: params[:id]).first
+    if @matricula
+      @course = Course.find(@matricula.course_id)
+    end
   end
 
   def create
