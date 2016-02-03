@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:edit,:show,:update,:destroy]
 
   def index
-    @students = Student.all
+    @students = Student.all.order("name ASC")
   end
 
   def new
