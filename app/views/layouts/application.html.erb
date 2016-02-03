@@ -36,6 +36,16 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+  </div>
+
   <%= yield %>
 
 </body>

@@ -18,17 +18,17 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      redirect_to @course
+      redirect_to @course, notice: "O Curso foi cadastrado com sucesso."
     else
-      render 'new'
+      render 'new', notice: "Ocorreu um erro."
     end
   end
 
   def update
     if @course.update(course_params)
-      redirect_to @course
+      redirect_to @course, notice: "O Curso foi atualizado com sucesso."
     else
-      render 'edit'
+      render 'edit', notice: "Ocorreu um erro."
     end
   end
 

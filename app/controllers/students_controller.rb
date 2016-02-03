@@ -22,17 +22,17 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      redirect_to @student
+      redirect_to @student, notice: "O Estudante foi cadastrado com sucesso."
     else
-      render 'new'
+      render 'new', notice: "Ocorreu um erro."
     end
   end
 
   def update
     if @student.update(student_params)
-      redirect_to @student
+      redirect_to @student, notice: "O Estudante foi atualizado com sucesso."
     else
-      render 'edit'
+      render 'edit',notice: "Ocorreu um erro."
     end
   end
 

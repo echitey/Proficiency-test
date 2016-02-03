@@ -14,6 +14,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'therubyracer', platforms: :ruby
 
+gem 'jquery-form-validator-rails'
+
 gem 'rails-assets-normalize-scss', '~> 3.0.1'
 gem 'rails-assets-stylish-scss', '~> 0.0.5'
 gem 'rails-assets-angular', '1.2.14'

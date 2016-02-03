@@ -8,9 +8,9 @@ class MatriculasController < ApplicationController
     if @matricula.save
       @student.status = 1
       @student.update(status: 1)
-      redirect_to @student
+      redirect_to @student, notice: "O Estudante foi matriculado com sucesso."
     else
-      redirect_to root_path
+      redirect_to root_path, notice: "Ocorreu um erro."
     end
   end
 
@@ -19,9 +19,9 @@ class MatriculasController < ApplicationController
     @matricula = Matricula.where(student_id: params[:student_id]).first
     if @matricula.destroy
       @student.update(status: 0)
-      redirect_to @student
+      redirect_to @student, notice: "O Estudante foi desvinculado com sucesso."
     else
-      redirect_to root_path
+      redirect_to root_path, notice: "Ocorreu um erro."
     end
   end
 end
