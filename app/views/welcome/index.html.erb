@@ -1,1 +1,14 @@
-INDEX
+<div class="container">
+  <div class="row centered-form center-block">
+    <%= link_to students_path do%>
+      <div class="col-md-3 col-md-offset-3 estudante comum">
+        <p>Estudantes: <%= @student_count%><p>
+      </div>
+    <% end %>
+    <%= link_to courses_path do%>
+      <div class="col-md-3 curso comum">
+        <p>Cursos: <%= @course_count%><p>
+      </div>
+    <% end %>
+  </div>
+</div>
