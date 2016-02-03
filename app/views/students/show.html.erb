@@ -4,10 +4,10 @@
     <strong>Estudante Id: </strong><%= @student.id%><br/>
     <strong>Nome: </strong><%= @student.name%><br/>
     <strong>Numero de Registro: </strong><%= @student.register_number%><br/>
-    <strong>Cadastrado em: </strong><%= @student.created_at%></br>
+    <strong>Cadastrado em: </strong><%= @student.created_at.strftime("%d/%m/%Y às %H:%M ")%></br>
     <strong>Status: </strong>
       <% if @student.status == 1 %>
-        Matriculado em <%= @course.name %> em <%= @matricula.entry_at%>
+        Matriculado em <%= @course.name %> em <%= @matricula.entry_at.strftime("%d/%m/%Y às %H:%M ")%>
       <% else %>
         <%= 'Não Matriculado' %>
         <%= render 'matriculas/form'%>

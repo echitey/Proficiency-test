@@ -10,7 +10,7 @@
       <% else %>
         <%= 'Não Ativo' %>
       <% end %><br/>
-    <strong>Criado em: </strong><%= @course.created_at%>
+    <strong>Criado em: </strong><%= @course.created_at.strftime("%d/%m/%Y às %H:%M ")%>
 
     <br/><br/><br/>
 
