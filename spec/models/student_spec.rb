@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Student, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+describe Student do
+  let(:student)	{	FactoryGirl.build	:student	}
+
+  subject {student}
+
+  it{should respond_to(:name)}
+  it{should respond_to(:register_number)}
+  it{should respond_to(:status)}
+
+  it{should be_valid}
 end
